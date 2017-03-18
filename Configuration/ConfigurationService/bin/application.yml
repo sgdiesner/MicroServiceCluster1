@@ -1,0 +1,44 @@
+server:
+    port: 8888
+#logging:
+#    level.: DEBUG
+endpoints:
+   health:
+       enabled: true
+   configprops:
+       enabled: true
+spring:
+    cloud:
+        config:
+            server:
+                git:
+                    uri: https://github.com/springexamples/dummy
+                    repos:
+                        customerlocate:
+                            clone-on-start: true
+                            pattern: customerlocate*
+                            uri: file:///C://Users//Steve//Desktop//Spring//SevenMicroServiceDemo//1//Configuration//Config_BackendCustomerLocateServer
+                        eventrecorder:
+                            clone-on-start: true
+                            pattern: eventrecorder*
+                            uri: file:///C://Users//Steve//Desktop//Spring//SevenMicroServiceDemo//1//Configuration//Config_EventRecorderServer
+                        email:
+                            clone-on-start: true
+                            pattern: email*
+                            uri: file:///C://Users//Steve//Desktop//Spring//SevenMicroServiceDemo//1//Configuration//Config_EmailServer
+                        fireandforget:
+                            clone-on-start: true
+                            pattern: fireandforget*
+                            uri: file:///C://Users//Steve//Desktop//Spring//SevenMicroServiceDemo//1//Configuration//Config_FireAndForgetServer
+                        aggregation:
+                            clone-on-start: true
+                            pattern: aggregation*
+                            uri: file:///C://Users//Steve//Desktop//Spring//SevenMicroServiceDemo//1//Configuration//Config_FrontFacingAggregationServer
+                        message:
+                            clone-on-start: true
+                            pattern: message*
+                            uri: file:///C://Users//Steve//Desktop//Spring//SevenMicroServiceDemo//1//Configuration//Config_MessagingServer
+                        serviceregister:
+                            clone-on-start: true
+                            pattern: serviceregister*
+                            uri: file:///C://Users//Steve//Desktop//Spring//SevenMicroServiceDemo//1//Configuration//Config_ServiceRegister
